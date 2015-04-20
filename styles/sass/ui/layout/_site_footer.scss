@@ -1,0 +1,8 @@
+.site-footer {
+    @extend %wrapper;
+    width: 100%;
+    text-align: center;
+    padding: 1%;
+    text-transform: uppercase;
+    @include font-size(1.4);
+}

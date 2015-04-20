@@ -1,0 +1,23 @@
+*,
+*:before,
+*:after {
+    @include box-sizing(border-box);
+}
+
+html {
+    font-size: 62.5%;
+    height: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    color: $text-color;
+    font-size: $font-size-base;
+    font-family: $font-family-base;
+    text-align: center;
+    background: $bg-base;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

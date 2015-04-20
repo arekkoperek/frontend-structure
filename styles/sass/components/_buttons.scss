@@ -1,0 +1,74 @@
+.btn {
+  display: inline-block;
+  margin-bottom: 0; // For input.btn
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 1px solid transparent;
+  white-space: nowrap;
+  @include button-size($padding-ml $padding-xl + 2, $font-size-h5, $line-height-base);
+  @include transition(background 0.1s linear 0s);
+
+  &:focus {
+    @include tab-focus();
+  }
+
+  &:hover,
+  &:focus {
+    //text-decoration: none;
+  }
+
+  &:active,
+  &.active {
+    outline: 0;
+    background-image: none;
+    @include box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+    pointer-events: none; // Future-proof disabling of clicks
+    @include opacity(.65);
+    @include box-shadow(none);
+  }
+
+  &.col {
+    margin: 0;
+  } 
+}
+
+.btn--black {
+    background: $brand-1;
+    color: $brand-2;
+    @include transition(all .3s linear);
+    box-shadow: 0 2px 2px #ccc;
+    
+    &:hover {
+          background: $brand-2;
+    color: $brand-1;
+    }
+}
+.btn--block {
+    display: block;
+    width: 100%;
+}
+
+.btn--default {
+  @extend .btn;
+  @include button($brand-2, transparent, $brand-2);
+  border-width: 2px;
+}
+
+.btn--sec {
+  @extend .btn;
+  @include button(#fff, $brand-2, none);
+}
+
+.btn--prim {
+  @extend .btn;
+  @include button(#fff, $brand-1, none);
+
+}

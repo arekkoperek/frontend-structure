@@ -1,0 +1,140 @@
+/* HELPERS */
+.center-block {
+  @include center-block();
+}
+
+.uppercased {
+    text-transform: uppercase;
+}
+.underlined {
+    text-decoration: underline;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.text-hide {
+  @include text-hide();
+}
+
+
+// Hide from screenreaders and browsers
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+#root {
+
+  .hide {
+    display: none;
+  }
+
+  .show {
+    display: block;
+  }
+
+  // Alignment
+  .txt--lt { 
+    text-align: left; 
+  }
+
+  .txt--rt { 
+    text-align: right; 
+  }
+
+  .txt--ct { 
+    text-align: center; 
+  }
+
+  .v--mid {
+    vertical-align: middle;
+  }
+
+  .v--t {
+    vertical-align: top;
+  }
+
+  .v--b {
+    vertical-align: bottom;
+  }
+
+  .txt-norm {
+    font-weight: normal;
+  }
+
+  .caps,
+  %caps {
+    text-transform: uppercase;
+  }
+
+  .noborder,
+  %noborder {
+    border: 0;
+  }
+
+  %rounded,
+  .rounded {
+      border-radius: 15px;
+  }
+
+  %rounded--s,
+  .rounded--s {
+    border-radius: 3px;
+  }
+}
+
+
+.fade {
+  @include transition(opacity .15s linear);
+  opacity: 0;
+
+  &.in {
+    opacity: 1;
+  }
+}
+
+.collapse {
+  display: none;
+
+  &.in {
+    display: block;
+  }
+}
+
+.collapsing {
+  @include transition(height .35s ease);
+  height: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+
+/* disc */
+.disc,
+%disc {
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 50%;
+    text-align: center;
+}
+
+/* Middle in height */
+
+%midd:before, 
+.midd:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%
+}
+
+%midd-in,
+.midd-in {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 90%;
+    margin: 0;
+}
+

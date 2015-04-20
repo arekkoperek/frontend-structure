@@ -1,0 +1,92 @@
+.site--home {
+    @extend %wrapper;
+    background: #ededed;
+}
+
+.hero-col {
+
+}
+
+.form-col {
+    padding: 3%;
+    @include font-size(2);
+    text-transform: none;
+}
+
+.separator {
+    border-top: 1px solid #d2d2d2;
+    height: 1px;
+    clear: both;
+    margin: 0 3%;
+}
+
+.bottom-section {
+    padding: 3%;
+    margin: 0 auto;
+    text-align: left;
+
+    .left {
+        float: left;
+        margin-right: 2%;
+    }
+    h3 {
+        @include font-size(2.2);
+        margin-bottom: 10px;
+        margin-top: 0;
+        font-weight: 700;
+    }
+}
+
+.newsletter-form {
+    padding-top: 40px;
+
+    input[type="text"], input[type="email"] {
+        @include box-shadow(none);
+        border: none;
+        width: 65%;
+    }
+    input[type="checkbox"] {
+        
+    }
+    fieldset {        
+        text-align: left;
+    }
+    .in-label {
+        width: 30%;
+    }
+    .small {
+        @include font-size(1.6);
+       float: left;
+    }
+    label.error {
+       text-align:right;
+       margin-right: 10px;
+       margin-top: 3px;
+    }
+}
+
+.social-section {
+    text-align: right;
+    padding-top: 20px;
+    text-transform: uppercased;
+    @include font-size(1.6);
+    
+    a {
+        display: inline-block;
+        margin-left: 3px;
+        background:url('../images/sprites/sprite.png') no-repeat 0 0;
+        width: 36px;
+        height: 36px;
+    }
+    .social-facebook {
+    	background-position: 0px 0px;
+    }
+   .social-instagram {
+	background-position: 0px -46px;
+   }
+     .social-twitter {
+	background-position: 0px -92px;
+     }
+    
+}
+

@@ -1,0 +1,139 @@
+/* NAVIGATION */
+
+.nav--main {
+    position: relative;
+    clear: both;
+    z-index: 1;
+    width: 100%;
+    z-index: 99;
+    
+    &:after {
+        content: '';
+        width: 73%;
+        float: right;
+        height: 100%;
+        background: #000;
+        position: absolute;
+        right: 0%;
+        top: 0;        
+        z-index: -1;
+        
+        @include media(mobile) {
+             width: 70%;
+        };
+          @include media(tablet) {
+             width: 73%;
+        };
+    }
+    &:before {
+        content: '';
+        width: 100%;      
+        height: 100%;
+        background: #000;
+        position: absolute;
+        top: 0;   
+       left: 0;
+        z-index: -1;
+             background-image: none;
+        
+        
+         @include media(tablet) {
+               width: 50%;
+                left: 12%;
+             background: url('../images/bg/nav-left.gif') no-repeat 6px 0;
+        };
+    }
+    
+
+    @media screen and (min-width: $width-m) {
+        @include inline-block();
+    }
+    ul {
+    margin: 0;
+    padding: 5px 0;
+    
+      @include media(tablet) {
+            margin: 8px 0;
+             padding: 0;
+      }
+    
+    }
+    
+}
+
+
+.nav-item {
+    @include inline-block();
+    margin-right: 30px;    
+}
+
+.nav-toggle {
+    position: relative;
+    margin-top: -18px;
+    width: 35px;
+    float: right;
+    cursor: pointer;
+    border: 2px solid $brand-2;
+
+    @media screen and (min-width: $width-m) {
+        display: none;
+    }
+
+    .toggle-line {
+        display: block;
+        height: 2px;
+        background: $brand-2; 
+        margin: 4px 7px;
+        @include transition(all 0.3s);
+    }
+
+    .is-nav-show & {
+
+        .toggle-line:nth-child(2) {
+            @include opacity(0)
+        }
+        .toggle-line:nth-child(1) {
+            @include rotate(45deg);
+            @include transform-origin(1px 5px);
+
+        }
+        .toggle-line:nth-child(3) {
+            @include rotate(-45deg);
+            @include transform-origin(2px -3px);
+
+        }
+
+    }
+}
+
+.nav-link {   
+    @include transition(all 0.3s);
+    border-bottom: 1px solid transparent;
+    display: block;
+    position: relative;    
+    text-transform: uppercase;
+    font-weight: bold;
+    @include font-size(2.0);
+    color: $brand-2;
+    text-decoration: none;
+
+    &:hover,
+        &.is-active {
+        text-decoration: none;
+        color: $brand-3;
+    }
+
+    @media screen and (min-width: $width-m) {     
+        margin: 0 10px;
+        @include font-size(1.6);
+
+
+        &:hover,
+            &.is-active {
+            text-decoration: none;
+            background: none;
+        }
+    }
+}  
+
+
